@@ -1,0 +1,7 @@
+pip >= 24.0
+transformers
+datasets==2.16.0
+bitsandbytes
+peft
+trl
+gc 
