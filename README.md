@@ -51,6 +51,9 @@ Training Locally is not **recommended**. One can use [google colab](https://cola
 **4. Optimization the Training Augmentation**
 In this step, I have commented the usage in my notebook.
 
+**5. For Trainer.ipynb is the finally optimization of Fine-Tuning**
+Check this one out first as the main.
+
 ~~ Thank you! ~~
 
 **Zhang Jiang**
