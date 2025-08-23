@@ -1,61 +1,94 @@
-## Fine-Tuning with Mistral Model
+# Fine-Tuning with Mistral Model
 
-**1. Pre-requisite**
+A comprehensive guide for fine-tuning Mistral models with optimized training workflows.
 
-Training Locally is not **recommended**. One can use [google colab](https://colab.google/) to train the model using T4 runtimes.
+## 📋 Prerequisites
 
-**2. Install the requirements and the dependencies**
+> **⚠️ Important:** Local training is **not recommended**. For optimal performance and cost-effectiveness, use [Google Colab](https://colab.google/) with T4 GPU runtimes.
 
-- Activate the Virtual Enviroments
-  
-  ```bash
-     python -m venv .venv
-  ```
+## 🚀 Setup Instructions
 
-  ```
-    source .venv/bin/activate #For Linux/Mac users
-    source .venv/Scripts/activate #For windows users
-  ```
+### 1. Environment Setup
 
-- For users that have the higher performance we need to install [CUDA](https://developer.nvidia.com/cuda-toolkit)
-  
-  ```bash
-    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-  ```
+Create and activate a virtual environment:
 
-- and install the requirements:
-  ```bash
-    pip install -r requirements.txt
-  ```
-- Install the build wheel
-    Note, if you don't want to reinstall our dependencies, append the `--no-deps` flag!
+```bash
+python -m venv .venv
+```
 
-  ```bash
-      pip install --force-reinstall 'https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_multi-backend-refactor/bitsandbytes-0.44.1.dev0-py3-none-win_amd64.whl'
-  ```
+**Activate the environment:**
+```bash
+# For Linux/Mac users
+source .venv/bin/activate
 
-- For Google Colab user:
+# For Windows users
+source .venv/Scripts/activate
+```
 
-  ```bash 
-    !pip install -U transformer
-    !pip install torch torchvision torchaudio
-    !pip install datasets==2.16.0
-    !pip install bitsandbytes
-    !pip install peft
-    !pip install trl
-    !pip install wandb
-  ```
+### 2. CUDA Installation (High-Performance Users)
 
-  Paste this in your NoteBook at the top and run.
+For users with CUDA-compatible GPUs, install [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit) first, then:
 
-**4. Optimization the Training Augmentation**
-In this step, I have commented the usage in my notebook.
+```bash
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
 
-**5. For Trainer.ipynb is the finally optimization of Fine-Tuning**
-Check this one out first as the main.
+### 3. Install Dependencies
 
-~~ Thank you! ~~
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Install Bitsandbytes Wheel
+
+> **💡 Tip:** Add the `--no-deps` flag if you want to avoid reinstalling existing dependencies.
+
+```bash
+pip install --force-reinstall 'https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_multi-backend-refactor/bitsandbytes-0.44.1.dev0-py3-none-win_amd64.whl'
+```
+
+### 5. Google Colab Setup
+
+For Google Colab users, paste the following code at the top of your notebook and run:
+
+```python
+!pip install -U transformers
+!pip install torch torchvision torchaudio
+!pip install datasets==2.16.0
+!pip install bitsandbytes
+!pip install peft
+!pip install trl
+!pip install wandb
+```
+
+## 📂 Project Structure
+
+- **`trainer.ipynb`** - Main fine-tuning workflow (start here)
+- **`camtour_fine_tuning.ipynb`** - Training augmentation examples with detailed comments
+- **`requirements.txt`** - Python dependencies
+- **`configure.ini`** - Configuration settings
+
+## 🔧 Training Optimization
+
+The training augmentation techniques and optimizations are documented with detailed comments in the notebooks. Refer to the notebooks for:
+
+- Data preprocessing strategies
+- Hyperparameter tuning
+- Memory optimization techniques
+- Training monitoring with Weights & Biases
+
+## 🎯 Getting Started
+
+1. **Start with `trainer.ipynb`** - This contains the final optimized fine-tuning process
+2. Review the training augmentation examples in `camtour_fine_tuning.ipynb`
+3. Adjust configuration parameters as needed
+
+---
+
+## 👨‍💻 Author
 
 **Zhang Jiang**
 
-
+*Happy fine-tuning! 🚀*
